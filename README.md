@@ -17,4 +17,4 @@ streamlit run app.py
 - Click on the Network URL link to see the dashboard
 
 ### Here is the demo of the dashboard:
-![alt_text](https://github.com/THEMrinaal/sentiment_analysis_of_airlines/tree/master/wiki/dashboard.gif)
+![Dashboard Demo](wiki/dashboard.gif)
