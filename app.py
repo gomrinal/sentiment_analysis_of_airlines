@@ -10,7 +10,7 @@ st.sidebar.title("Sentiment Analysis of Tweets about US Airlines 🐦")
 st.markdown('This application is Streamlit dashboard to analyze the sentiment of Tweets')
 
 
-DATA_URL= ('Tweets.csv')
+DATA_URL= ('data/Tweets.csv')
 
 @st.cache(persist=True)
 def load_data():
