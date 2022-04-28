@@ -38,3 +38,6 @@ jobs:
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+    - name: Deploy container to App Engine 
+      run: |-
+      gcloud run deploy --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest --platform managed
