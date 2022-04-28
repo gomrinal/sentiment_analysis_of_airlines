@@ -1,9 +1,6 @@
 name: Python application
 
-on:
-  pull_request:
-    branches:
-      - feature*
+on: [push]
 
 jobs:
   lint-and-test:

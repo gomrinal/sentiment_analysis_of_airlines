@@ -1,8 +1,7 @@
 name: Building and Pushing Python Image to Google Cloud Platform
 on:
-  pull_request:
-    types: closed
-    branches:
+  push:
+    pull_request:
       - main
 jobs:
   build-push-gcr:
