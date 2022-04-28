@@ -10,6 +10,8 @@ jobs:
     env:
       IMAGE_NAME: mailchimp-data-science
       PROJECT_ID: ${{ secrets.PROJECT_ID }} 
+      APPLICATION_NAME: hello-world-app
+      REGION: us-east1
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -38,6 +40,7 @@ jobs:
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
-    - name: Deploy container to App Engine 
+    - name: Build & Deploy to Cloud Run 
       run: |-
-      gcloud run deploy --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest --platform managed
+        gcloud builds submit --tag gcr.io/${{ secrets.PROJECT_ID }}/$APPLICATION_NAME --project=${{ secrets.PROJECT_ID }}
+        gcloud run deploy $APPLICATION_NAME   --image gcr.io/${{ secrets.PROJECT_ID }}/$APPLICATION_NAME  --platform managed --project=${{ secrets.PROJECT_ID }} --allow-unauthenticated --region $REGION
