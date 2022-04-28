@@ -1,11 +1,11 @@
 name: Building and Pushing Python Image to Google Cloud Platform
 on:
-  push:
-    pull_request:
+  pull_request:
+    types: closed
+    branches:
       - main
 jobs:
   build-push-gcr:
-    needs: lint-and-test
     name: Build and Push to GCP
     runs-on: ubuntu-latest
     env:
