@@ -7,6 +7,3 @@ def test_capitalize_string2():
         raise TypeError('Please provide a string')
     return s.capitalize()
 
-def test_capitalize_string():
-    """ test 2"""
-    assert capitalize_string('test') == 'Test'
