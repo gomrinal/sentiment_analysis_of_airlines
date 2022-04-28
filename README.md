@@ -18,3 +18,5 @@ streamlit run app.py
 
 ### Here is the demo of the dashboard:
 ![Dashboard Demo](wiki/dashboard.gif)
+
+## IAM Permissions required:
