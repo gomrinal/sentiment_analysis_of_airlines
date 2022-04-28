@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build-push-gcr:
+    needs: lint-and-test
     name: Build and Push to GCP
     runs-on: ubuntu-latest
     env:
